@@ -330,6 +330,9 @@ object Consumer {
      try {
         val appClient: AppClient = new AppClient()
         val config: OmmConsumerConfig = EmaFactory.createOmmConsumerConfig()
+        //Create EMA OmmConsumer object. 
+        //The OmmConsumer connects and logs in to the server then
+        //it obtains services information, loads or downloads dictionary information automatically.
         consumer = EmaFactory.createOmmConsumer(config.host(server).username(user))
         val reqMsg: ReqMsg = EmaFactory.createReqMsg()
         //1 item/RIC with all fields so batch and view request are not created; specify the item/RIC in the name(..) method
